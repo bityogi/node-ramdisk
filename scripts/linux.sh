@@ -4,7 +4,7 @@ set -e
 
 mk_ram_disk() {
   local ramfs_size_mb=$1
-  local mount_point=/tmp/${2}
+  local mount_point=${2}
 
   if EXISTS=`mount | grep ${mount_point}`; then
     printf "device \"%s\" already mounted" ${mount_point} 1>&2
@@ -17,7 +17,7 @@ mk_ram_disk() {
 }
 
 rm_ram_disk() {
-  local mount_point=/tmp/${2}
+  local mount_point=${2}
   udisksctl umount /dev/${mount_point}
 }
 
