@@ -35,10 +35,6 @@
   "bugs": {
     "url": "https://github.com/joaquimserafim/node-ramdisk/issues"
   },
-  "os": [
-    "darwin",
-    "linux"
-  ],
   "homepage": "https://github.com/joaquimserafim/node-ramdisk",
   "devDependencies": {
     "code": "^1.4.0",
