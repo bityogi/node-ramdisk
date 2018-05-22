@@ -11,16 +11,14 @@ mk_ram_disk() {
     exit 1
   fi
 
-  mkdir ${mount_point} > /dev/null
-  chmod 777 ${mount_point} > /dev/null
-  mount -t tmpfs -o size=${ramfs_size_mb}M tmpfs ${mount_point}/ > /dev/null
-
+  udisks --mount -b /dev/${mount_point}
+  
   printf %s ${mount_point//[[:blank:]]/}
 }
 
 rm_ram_disk() {
-  umount $1 > /dev/null
-  rm -rf $1 > /dev/null
+  local mount_point=/tmp/${2}
+  udisks --umount /dev/${mount_point}
 }
 
 main() {
