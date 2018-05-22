@@ -1,5 +1,11 @@
 # node-ramdisk
 
+(This repository is a fork of [node-ramdisk](https://github.com/joaquimserafim/node-ramdisk)).
+Our CI is on a windows machine, even though the application using this module are not running on windows. 
+In order for us to be able to build it, we are removing the os targets of darwin and linux from the module's package.json.
+
+If you need to use a library. Please refer to the original one at https://github.com/joaquimserafim/node-ramdisk.
+
 create a ram disk with node.js
 
 <a href="https://nodei.co/npm/node-ramdisk/"><img src="https://nodei.co/npm/node-ramdisk.png?downloads=true"></a>
