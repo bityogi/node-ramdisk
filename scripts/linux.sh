@@ -11,14 +11,14 @@ mk_ram_disk() {
     exit 1
   fi
 
-  udisks --mount -b /dev/${mount_point}
+  udisksctl mount -b /dev/${mount_point}
   
   printf %s ${mount_point//[[:blank:]]/}
 }
 
 rm_ram_disk() {
   local mount_point=/tmp/${2}
-  udisks --umount /dev/${mount_point}
+  udisksctl umount /dev/${mount_point}
 }
 
 main() {
