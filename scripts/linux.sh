@@ -13,13 +13,13 @@ mk_ram_disk() {
 
   mkdir ${mount_point} > /dev/null
   chmod 777 ${mount_point} > /dev/null
-  sudo mount -t tmpfs -o size=${ramfs_size_mb}M tmpfs ${mount_point}/ > /dev/null
+  mount -t tmpfs -o size=${ramfs_size_mb}M tmpfs ${mount_point}/ > /dev/null
 
   printf %s ${mount_point//[[:blank:]]/}
 }
 
 rm_ram_disk() {
-  sudo umount $1 > /dev/null
+  umount $1 > /dev/null
   rm -rf $1 > /dev/null
 }
 
